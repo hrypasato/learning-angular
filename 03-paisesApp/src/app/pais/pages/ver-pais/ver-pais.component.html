@@ -1,0 +1,31 @@
+<div class="alert alert-info" *ngIf="!pais; else divPais">
+    Espere por favor ...
+</div>
+
+<ng-template #divPais>
+    <div class="row animate__animated animate__fadeIn animate__faster">
+        <div class="col-12">
+            <h1>País: <small>{{pais.name.official}}</small></h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <h3>Bandera</h3>
+            <img [src]="pais.flags.svg" alt="" class="img-thumbnail">
+        </div>
+        <div class="col">
+            <h3>Información</h3>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>Poblacion</strong> {{pais.population | number}}
+                </li>
+                <li class="list-group-item">
+                    <strong>Zona horaria</strong> {{pais.timezones}}
+                </li>
+                <li class="list-group-item">
+                    <strong>CCN3</strong> {{pais.ccn3}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</ng-template>
