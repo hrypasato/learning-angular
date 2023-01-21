@@ -1,0 +1,45 @@
+<h1 class="mt-5">Selectores</h1>
+<hr>
+<form [formGroup]="miFormulario" (ngSubmit)="guardar()">
+    <div class="row mb-3">
+        <div class="col">
+            <label class="form-label">Continente:</label>
+            <select class="form-control" formControlName="region">
+                <option value="">-- Seleccione Continente --</option>
+                <option *ngFor="let region of regiones" 
+                    [value]="region | lowercase">{{ region }}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row mb-3" *ngIf="paises.length !== 0">
+        <div class="col">
+            <label class="form-label">Pais:</label>
+            <select class="form-control" formControlName="pais">
+                <option value="">-- Seleccione Pais --</option>
+                <option *ngFor="let country of paises" 
+                    [value]="country.cca2 | lowercase">{{ country.name.common }}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row mb-3" *ngIf="fronteras.length !== 0">
+        <div class="col">
+            <label class="form-label">Fronteras:</label>
+            <select class="form-control" formControlName="frontera">
+                <option value="">-- Seleccione el pais de frontera --</option>
+                <option *ngFor="let frontera of fronteras" 
+                    [value]="frontera.cca2| lowercase">{{ frontera.name.common }}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-primary float-end" type="submit">Seleccionar</button>
+        </div>
+    </div>
+</form>
+
+<div class="mt-5">
+    <h5>Formulario</h5>
+    <pre>Valid: {{ miFormulario.valid }}</pre>
+    <pre>{{ miFormulario.value | json }}</pre>
+</div>
