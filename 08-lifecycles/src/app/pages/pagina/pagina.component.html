@@ -1,0 +1,17 @@
+<p>
+    <strong>Nombre:</strong> {{ nombre }}
+</p>
+
+<input 
+    type="text" 
+    placeholder="Hola mundo"
+    [(ngModel)]="nombre">
+
+<button (click)="onClick()">Click me</button>
+
+<br><hr>
+
+<app-show [nombre]="nombre"></app-show>
+
+<br><hr>
+<h2>Segundos {{ segundos }}</h2>
