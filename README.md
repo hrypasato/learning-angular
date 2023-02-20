@@ -116,3 +116,5 @@ Angular auth token authentication
 
 **Preview:**
 
+![Screenshot_20230219_190007](https://user-images.githubusercontent.com/65327896/219983424-b72019f5-c6c2-44ff-a06d-ef76415633ab.png)
+
